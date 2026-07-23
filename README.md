@@ -1,7 +1,5 @@
 ﻿# WebTests (Java)
-
-Java port of the C# `PlaywrightTestExamples` project - the same UI automation
-suite against http://uitestingplayground.com/, built with Playwright for Java,
+UI automation tests for web site http://uitestingplayground.com/, built with Playwright for Java,
 JUnit 5, and Maven.
 
 ## How to launch
