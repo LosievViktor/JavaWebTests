@@ -14,7 +14,17 @@ import org.junit.jupiter.api.BeforeEach;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static com.microsoft.playwright.options.AriaRole.LINK;
 
-
+/**
+ * Equivalent of the C# project's BaseTest (Microsoft.Playwright.NUnit.PageTest). Playwright's
+ * Java bindings don't ship a JUnit base class, so this manages the Playwright/Browser lifecycle
+ * once per test class (static, via @BeforeAll/@AfterAll) and gives every test method its own
+ * isolated BrowserContext + Page (via @BeforeEach/@AfterEach) - the same isolation PageTest
+ * gives you per-test in .NET.
+ * <p>
+ * Note: since playwright/browser/params are static fields declared on this shared superclass,
+ * this pattern assumes test classes run sequentially (Surefire's default) rather than in
+ * parallel forks - see the README for details if you want to parallelize.
+ */
 public abstract class BaseTest {
 
     protected static Playwright playwright;
