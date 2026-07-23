@@ -4,15 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/**
- * Runtime parameters, equivalent to the C# project's live.runsettings / TestContext.Parameters.
- * <p>
- * Values can be overridden with -D system properties, e.g.:
- * <pre>
- *   mvn test -Denvironment=http://uitestingplayground.com/ -Dlogin=Viktor -Dpassword=pwd -DwrongPassword=pwd123 -Dheadless=false
- * </pre>
- * Falls back to {@code src/test/resources/test.properties}, then to the defaults below.
- */
 public final class TestParameters {
 
     public final String environment;
